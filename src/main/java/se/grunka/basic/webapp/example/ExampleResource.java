@@ -5,8 +5,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
 
 import com.sun.jersey.api.view.Viewable;
 
@@ -16,8 +16,17 @@ public class ExampleResource {
     @Path("/view")
     @Produces(MediaType.TEXT_HTML)
     public Response showView() {
-        Map<String, String> model = new HashMap<>();
-        model.put("message", "hello world");
+        ExampleModel model = new ExampleModel();
         return Response.ok(new Viewable("/example/view.jsp", model)).build();
+    }
+
+    public static class ExampleModel {
+        public String getMessage() {
+            return "Hello World!";
+        }
+
+        public List<String> getCounter() {
+            return Arrays.asList("One", "Two", "Three");
+        }
     }
 }
