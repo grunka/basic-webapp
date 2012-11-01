@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
   <display-name>basic-webapp</display-name>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>/*</url-pattern>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
   <listener>
     <listener-class>se.grunka.basic.webapp.BasicConfiguration</listener-class>
   </listener>

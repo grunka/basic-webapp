@@ -5,10 +5,11 @@ import java.util.Map;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.google.inject.Singleton;
 import com.google.inject.Stage;
-import com.google.inject.servlet.GuiceFilter;
 import com.google.inject.servlet.GuiceServletContextListener;
 import com.sun.jersey.guice.JerseyServletModule;
+import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 public class BasicConfiguration extends GuiceServletContextListener {
     @Override
@@ -16,8 +17,13 @@ public class BasicConfiguration extends GuiceServletContextListener {
         return Guice.createInjector(Stage.PRODUCTION, new JerseyServletModule() {
             @Override
             protected void configureServlets() {
+                install(new ApplicationModule());
+
                 Map<String, String> initParams = new HashMap<>();
-                filter("/*").through(GuiceFilter.class, initParams);
+                initParams.put(ServletContainer.FEATURE_FILTER_FORWARD_ON_404, "true");
+                initParams.put(ServletContainer.JSP_TEMPLATES_BASE_PATH, "/WEB-INF/templates");
+                bind(ServletContainer.class).in(Singleton.class);
+                filter("/*").through(ServletContainer.class, initParams);
             }
         });
     }
