@@ -16,8 +16,8 @@ public class ExampleResource {
     @Path("/view")
     @Produces(MediaType.TEXT_HTML)
     public Response showView() {
-        Map<String, String> content = new HashMap<>();
-        content.put("message", "hello world");
-        return Response.ok(new Viewable("/example/view.jsp")).build();
+        Map<String, String> model = new HashMap<>();
+        model.put("message", "hello world");
+        return Response.ok(new Viewable("/example/view.jsp", model)).build();
     }
 }
