@@ -31,6 +31,10 @@ public class JsonProvider extends AbstractMessageReaderWriterProvider<Object> {
         this.gson = gson;
     }
 
+    public JsonProvider() {
+        this(new Gson());
+    }
+
     @Override
     public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
         return true;
