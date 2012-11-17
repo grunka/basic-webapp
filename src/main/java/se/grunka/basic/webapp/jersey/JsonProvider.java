@@ -1,4 +1,4 @@
-package se.grunka.basic.webapp;
+package se.grunka.basic.webapp.jersey;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
@@ -31,6 +31,7 @@ public class JsonProvider extends AbstractMessageReaderWriterProvider<Object> {
         this.gson = gson;
     }
 
+    @SuppressWarnings("UnusedDeclaration") //Used when created from the client
     public JsonProvider() {
         this(new Gson());
     }

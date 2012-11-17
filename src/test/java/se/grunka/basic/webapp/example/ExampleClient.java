@@ -7,7 +7,7 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
-import se.grunka.basic.webapp.JsonProvider;
+import se.grunka.basic.webapp.jersey.JsonProvider;
 
 public class ExampleClient {
     public static void main(String[] args) {

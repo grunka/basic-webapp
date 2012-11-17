@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+  <!-- Used by DataSourcesModule -->
+  <Resource
+      name="jdbc/Database"
+      auth="Container"
+      type="javax.sql.DataSource"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://192.168.0.1:3306/database"
+      username="username"
+      password="password"
+      maxActive="100"
+      maxIdle="30"
+      maxWait="10000"
+      />
+  <!-- Used by WebResourcesModule -->
+  <Environment
+      name="webResourceConnectTimeout"
+      description="Connect timeout for all web resources in milliseconds"
+      type="java.lang.Integer"
+      value="10000"
+      />
+  <Environment
+      name="webResourceReadTimeout"
+      description="Connect timeout for all web resources in milliseconds"
+      type="java.lang.Integer"
+      value="30000"
+      />
+  <Environment
+      name="webResource/SiteName"
+      description="A specific site you want configured"
+      value="http://localhost:8080"
+      type="java.lang.String"
+      />
+</Context>
