@@ -9,6 +9,5 @@ public class ExampleModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(ExampleResource.class).in(RequestScoped.class);
-        bind(Gson.class).toInstance(new GsonBuilder().setPrettyPrinting().create());
     }
 }
