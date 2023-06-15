@@ -9,7 +9,7 @@
   <url>https://github.com/grunka/basic-webapp</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jersey.version>1.16</jersey.version>
+    <jersey.version>1.19.4</jersey.version>
   </properties>
   <build>
     <plugins>
