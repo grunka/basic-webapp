@@ -1,3 +1,7 @@
+# Archived
+
+This repo has been archived and will not be updated.
+
 # basic-webapp
 
 This is an example of how I like to set up a basic web-app using [Guice][guice] and [Jersey][jersey]. The way to use this is either to have it as a reference when building something similar or just cloning it and then remove all the example code and install your own modules in the [BasicConfiguration][app-module].
